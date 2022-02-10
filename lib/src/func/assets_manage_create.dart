@@ -36,8 +36,8 @@ class AssetsManageCreate {
                 });
               }
               // Check if the resource has the same name.
-              // final amContent = assetsMFile.readAsStringSync();
-              // final rule = 'static String $name =';
+              final amContent = assetsMFile.readAsStringSync();
+              final rule = 'static String $name =';
               // if (RegExp(rule).hasMatch(amContent)) {
               //   final line = AssetsTool.getLineFrom(path.assetsManagePath, rule);
               //   final sPath = line.split('\'')[1];
