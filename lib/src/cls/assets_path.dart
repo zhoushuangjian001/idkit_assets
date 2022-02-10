@@ -26,4 +26,19 @@ class AssetsPath {
 
   /// The path to the brief introduction text of the resource file management script.
   String get readmePath => join(assetsPath, 'readme.txt');
+
+  /// Temporary resource file directory to store files.
+  String get tempDAssetsPath => join(_rootPath, 'temp_assets_directory.txt');
+
+  /// The file stored in the temporary resource file file path.
+  String get tempFAssetsPath => join(_rootPath, 'temp_assets_file.txt');
+
+  /// All resource paths of the project refer to the path of the management file.
+  String get assetsManagePath => join(libPath, 'idkit_assets_manage.dart');
+
+  /// Project release specification temporary file path.
+  String get assetsTPubspecPath => join(_rootPath, 'temp_assets_pubspec.yaml');
+
+  /// Resource naming unqualified file path.
+  String get nameNoRegularPath => join(_rootPath, 'temp_assets_unregular.txt');
 }

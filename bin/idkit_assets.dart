@@ -1,4 +1,7 @@
 import 'package:idkit_assets/src/func/assets_create.dart';
+import 'package:idkit_assets/src/func/assets_manage_create.dart';
+import 'package:idkit_assets/src/func/assets_pubspec_create.dart';
+import 'package:idkit_assets/src/func/assets_tfd_create.dart';
 import 'package:idkit_assets/src/other/assets_log.dart';
 import 'package:idkit_assets/src/other/assets_tool.dart';
 import 'package:idkit_assets/src/other/idkit_assets_const.dart';
@@ -27,10 +30,17 @@ void main(List<String> arguments) {
       case 'run':
       case '-r':
         AssetsCreate.createAssetsDirectory();
+        AssetsTempFDCreate.createAssetsTempFD();
+        AssetsManageCreate.createAssetsMange();
+        AssetsPubSpecCreate.createAssetsPubspec();
         break;
       case 'rename':
       case '-rn':
+        final name = arguments.length > 1 ? arguments[1] : null;
         AssetsCreate.createAssetsDirectory();
+        AssetsTempFDCreate.createAssetsTempFD();
+        AssetsManageCreate.createAssetsMange(clsName: name);
+        AssetsPubSpecCreate.createAssetsPubspec();
         break;
       default:
         AssetsLog.unknown();
