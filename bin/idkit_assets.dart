@@ -1,7 +1,7 @@
-import 'package:idkit_assets/idkit_assets.dart' as idkit_assets;
-import 'package:idkit_assets/src/function/assets_path.dart';
-import 'package:idkit_assets/src/idkit_assets_const.dart';
+import 'package:idkit_assets/src/func/assets_create.dart';
 import 'package:idkit_assets/src/other/assets_log.dart';
+import 'package:idkit_assets/src/other/assets_tool.dart';
+import 'package:idkit_assets/src/other/idkit_assets_const.dart';
 
 void main(List<String> arguments) {
   // Check the input command.
@@ -20,18 +20,25 @@ void main(List<String> arguments) {
   // Start.
   AssetsLog.start();
 
-  // Analysis of input instructions.
-  switch (firstArg) {
-    case 'run':
-    case '-r':
-      final path = AssetsPath().rootPath;
-      print(path);
-      break;
-    case 'rename':
-    case '-rn':
-      break;
-    default:
-      AssetsLog.unknown();
+  // Check if execution is full project.
+  if (AssetsTool.isIntact) {
+    // Analysis of input instructions.
+    switch (firstArg) {
+      case 'run':
+      case '-r':
+        AssetsCreate.createAssetsDirectory();
+        break;
+      case 'rename':
+      case '-rn':
+        AssetsCreate.createAssetsDirectory();
+        break;
+      default:
+        AssetsLog.unknown();
+    }
+  } else {
+    AssetsLog.unIntact();
   }
+
+  // End.
   AssetsLog.end();
 }
