@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:idkit_assets/src/cls/assets_directory.dart';
 import 'package:idkit_assets/src/cls/assets_file.dart';
 import 'package:idkit_assets/src/cls/assets_path.dart';
+import 'package:idkit_assets/src/other/assets_tool.dart';
 
 class AssetsTempFDCreate {
   static void createAssetsTempFD() {
@@ -19,13 +20,14 @@ class AssetsTempFDCreate {
       final fPath = item.path;
       final isD = FileSystemEntity.isDirectorySync(fPath);
       final isF = FileSystemEntity.isFileSync(fPath);
+      final rFPath = AssetsTool.getRAssetsPath(fPath);
       if (isD) {
-        assetsTempDFile.writeAsStringSync('$fPath/\n', mode: FileMode.append);
+        assetsTempDFile.writeAsStringSync('$rFPath/\n', mode: FileMode.append);
       } else if (isF) {
         // Filter hidden files.
         final hide = fPath.split('/').last;
         if (!hide.startsWith('.')) {
-          assetsTempFFile.writeAsStringSync('$fPath\n', mode: FileMode.append);
+          assetsTempFFile.writeAsStringSync('$rFPath\n', mode: FileMode.append);
         }
       }
     }
