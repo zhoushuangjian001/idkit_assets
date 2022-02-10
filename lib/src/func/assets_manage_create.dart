@@ -8,9 +8,11 @@ class AssetsManageCreate {
   static void createAssetsMange({String? clsName}) {
     // Get name of assets manage class.
     final clsname = clsName ??= AssetsTool.clsName;
+    print('---$clsname---');
     final path = AssetsPath();
     final assetsMFile = AssetsFile(path.assetsManagePath).blank;
     assetsMFile.writeAsStringSync('class $clsname {\n', mode: FileMode.append);
+    print('---xxx');
     // Get the temporary file object of the resource management file path.
     final assetsTFFile = AssetsFile(path.tempFAssetsPath).file;
     final assetsTDFile = AssetsFile(path.tempDAssetsPath).file;
