@@ -38,14 +38,14 @@ class AssetsManageCreate {
               // Check if the resource has the same name.
               final amContent = assetsMFile.readAsStringSync();
               final rule = 'static String $name =';
-              // if (RegExp(rule).hasMatch(amContent)) {
-              //   final line = AssetsTool.getLineFrom(path.assetsManagePath, rule);
-              //   final sPath = line.split('\'')[1];
-              //   final errorInfo = 'REASON: Resource file names are duplicated.\n  NAME: $name\n  PATH: $path\n SPATH: $sPath';
-              //   assetsNURFile.writeAsStringSync('$errorInfo\n', mode: FileMode.append);
-              // } else {
-              //   assetsMFile.writeAsStringSync('\tstatic String $name = \'$rAPath\';\n');
-              // }
+              if (RegExp(rule).hasMatch(amContent)) {
+                // final line = AssetsTool.getLineFrom(path.assetsManagePath, rule);
+                // final sPath = line.split('\'')[1];
+                // final errorInfo = 'REASON: Resource file names are duplicated.\n  NAME: $name\n  PATH: $path\n SPATH: $sPath';
+                // assetsNURFile.writeAsStringSync('$errorInfo\n', mode: FileMode.append);
+              } else {
+                assetsMFile.writeAsStringSync('\tstatic String $name = \'$rAPath\';\n');
+              }
             } else {
               final errorInfo = 'REASON: Resource file naming is not standard.\n  NAME: $name\n  PATH: $rAPath';
               assetsNURFile.writeAsStringSync('$errorInfo\n', mode: FileMode.append);
