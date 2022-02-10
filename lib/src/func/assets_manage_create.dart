@@ -11,7 +11,7 @@ class AssetsManageCreate {
     print('---$clsname---');
     final path = AssetsPath();
     final assetsMFile = AssetsFile(path.assetsManagePath).blank;
-    assetsMFile.writeAsStringSync('class $clsname {\n', mode: FileMode.append);
+    assetsMFile.writeAsStringSync('class $clsname {\n');
     print('---xxx');
     // Get the temporary file object of the resource management file path.
     final assetsTFFile = AssetsFile(path.tempFAssetsPath).file;
