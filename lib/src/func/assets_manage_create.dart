@@ -26,7 +26,6 @@ class AssetsManageCreate {
           if (!last.contains('/')) {
             var name = last.split('.').first;
             final isReg = assetsNameRegExp.hasMatch(name);
-            final rAPath = AssetsTool.getRAssetsPath(itemTF);
             if (isReg) {
               if (name.contains('_')) {
                 name = name.replaceAllMapped(RegExp(r'_[a-z]'), (match) {
@@ -41,13 +40,13 @@ class AssetsManageCreate {
               if (RegExp(rule).hasMatch(amContent)) {
                 final line = AssetsTool.getLineFrom(path.assetsManagePath, rule);
                 final sPath = line.split('\'')[1];
-                final errorInfo = 'REASON: Resource file names are duplicated.\n  NAME: $name\n  PATH: $path\n SPATH: $sPath';
+                final errorInfo = 'REASON: Resource file names are duplicated.\n  NAME: $name\n  PATH: $itemTF\n SPATH: $sPath';
                 assetsNURFile.writeAsStringSync('$errorInfo\n', mode: FileMode.append);
               } else {
-                assetsMFile.writeAsStringSync('\tstatic String $name = \'$rAPath\';\n', mode: FileMode.append);
+                assetsMFile.writeAsStringSync('\tstatic String $name = \'$itemTF\';\n', mode: FileMode.append);
               }
             } else {
-              final errorInfo = 'REASON: Resource file naming is not standard.\n  NAME: $name\n  PATH: $rAPath';
+              final errorInfo = 'REASON: Resource file naming is not standard.\n  NAME: $name\n  PATH: $itemTF';
               assetsNURFile.writeAsStringSync('$errorInfo\n', mode: FileMode.append);
             }
           }
