@@ -51,8 +51,8 @@ class AssetsManageCreate {
             }
           }
         }
-        assetsMFile.writeAsStringSync('\n', mode: FileMode.append);
       }
+      assetsMFile.writeAsStringSync('\n', mode: FileMode.append);
     }
     assetsMFile.writeAsStringSync('}', mode: FileMode.append);
   }
