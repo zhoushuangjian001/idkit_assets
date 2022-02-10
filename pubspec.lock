@@ -114,7 +114,7 @@ packages:
     source: hosted
     version: "4.0.0"
   io:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: io
       url: "https://pub.flutter-io.cn"
@@ -170,7 +170,7 @@ packages:
     source: hosted
     version: "2.0.2"
   path:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: path
       url: "https://pub.flutter-io.cn"
