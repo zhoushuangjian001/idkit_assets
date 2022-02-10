@@ -39,12 +39,12 @@ class AssetsManageCreate {
               final amContent = assetsMFile.readAsStringSync();
               final rule = 'static String $name =';
               if (RegExp(rule).hasMatch(amContent)) {
-                // final line = AssetsTool.getLineFrom(path.assetsManagePath, rule);
-                // final sPath = line.split('\'')[1];
-                // final errorInfo = 'REASON: Resource file names are duplicated.\n  NAME: $name\n  PATH: $path\n SPATH: $sPath';
-                // assetsNURFile.writeAsStringSync('$errorInfo\n', mode: FileMode.append);
+                final line = AssetsTool.getLineFrom(path.assetsManagePath, rule);
+                final sPath = line.split('\'')[1];
+                final errorInfo = 'REASON: Resource file names are duplicated.\n  NAME: $name\n  PATH: $path\n SPATH: $sPath';
+                assetsNURFile.writeAsStringSync('$errorInfo\n', mode: FileMode.append);
               } else {
-                assetsMFile.writeAsStringSync('\tstatic String $name = \'$rAPath\';\n');
+                assetsMFile.writeAsStringSync('\tstatic String $name = \'$rAPath\';\n', mode: FileMode.append);
               }
             } else {
               final errorInfo = 'REASON: Resource file naming is not standard.\n  NAME: $name\n  PATH: $rAPath';
