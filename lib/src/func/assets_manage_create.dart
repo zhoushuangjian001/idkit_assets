@@ -19,7 +19,7 @@ class AssetsManageCreate {
     final linesTD = assetsTDFile.readAsLinesSync();
     final linesTF = assetsTFFile.readAsLinesSync();
     for (var itemDF in linesTD) {
-      assetsMFile.writeAsStringSync('\n\t/// $itemDF\n', mode: FileMode.append);
+      assetsMFile.writeAsStringSync('\t/// $itemDF\n\n', mode: FileMode.append);
       for (var itemTF in linesTF) {
         if (itemTF.contains(itemDF)) {
           final last = itemTF.split(itemDF).last;
