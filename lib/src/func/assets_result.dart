@@ -9,14 +9,14 @@ class AssetsResultCheck {
     final path = AssetsPath();
     final isContent = AssetsTool.isContent(path.nameIrRegularPath);
     if (isContent) {
-      final heard = 'The project resources do not meet the specifications as follows:\n';
+      final heard = 'The project resources do not meet the specifications as follows:';
       AssetsLog.out('$heard', type: OutColor.red);
       final irRegularFile = AssetsFile(path.nameIrRegularPath).file;
       final content = irRegularFile.readAsStringSync();
       AssetsLog.out('$content', type: OutColor.red);
       final count = AssetsTool.count(path.nameIrRegularPath, 'REASON:');
       final end = 'There are a total of $count non-standard resource files.';
-      AssetsLog.out('$end', type: OutColor.red);
+      AssetsLog.out('\n$end', type: OutColor.red);
     } else {
       AssetsLog.success();
     }
