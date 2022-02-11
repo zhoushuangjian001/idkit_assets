@@ -9,11 +9,14 @@ class AssetsResultCheck {
     final path = AssetsPath();
     final isContent = AssetsTool.isContent(path.nameIrRegularPath);
     if (isContent) {
-      final heard = '\nThe project resources do not meet the specifications as follows:\n';
+      final heard = 'The project resources do not meet the specifications as follows:\n';
       AssetsLog.out('$heard', type: OutColor.red);
       final irRegularFile = AssetsFile(path.nameIrRegularPath).file;
       final content = irRegularFile.readAsStringSync();
       AssetsLog.out('$content', type: OutColor.red);
+      final count = AssetsTool.count(path.nameIrRegularPath, 'REASON:');
+      final end = 'There are a total of $count non-standard resource files.';
+      AssetsLog.out('$end', type: OutColor.red);
     } else {
       AssetsLog.success();
     }
@@ -24,13 +27,13 @@ class AssetsResultCheck {
     final path = AssetsPath();
     final isContent = AssetsTool.isContent(path.unusedAssetsPath);
     if (isContent) {
-      final heard = '\nThe results of the unused resource check in the project are as follows:\n';
+      final heard = 'The results of the unused resource check in the project are as follows:\n';
       AssetsLog.out('$heard', type: OutColor.red);
       final irRegularFile = AssetsFile(path.unusedAssetsPath).file;
       final content = irRegularFile.readAsStringSync();
       AssetsLog.out('$content', type: OutColor.red);
       final count = AssetsTool.count(path.unusedAssetsPath, 'PATH:');
-      final end = '\nThere are a total of $count unused resource files.';
+      final end = 'There are a total of $count unused resource files.';
       AssetsLog.out('$end', type: OutColor.red);
     } else {
       AssetsLog.unusedACSuccess();

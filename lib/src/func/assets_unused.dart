@@ -71,8 +71,10 @@ class AssetsUnused {
             fFile.delete();
           }
         }
+        AssetsLog.removeUnusedAssestSuccess();
+      } else {
+        AssetsLog.uUnusedAssets();
       }
-      AssetsLog.rUnusedASuccess();
     } else {
       AssetsLog.rUnusedA();
     }

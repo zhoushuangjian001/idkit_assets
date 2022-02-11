@@ -57,6 +57,12 @@ class AssetsLog {
 
   /// Check completion prompt for unused resources in the project.
   static void unusedACSuccess() => print(green.wrap('*          The resource file check is not used in the project is complete.        *'));
+
+  /// No unused resource files.
+  static void uUnusedAssets() => print(green.wrap('*                              No unused resource files!                              *'));
+
+  /// Unused resource file removal completed.
+  static void removeUnusedAssestSuccess() => print(green.wrap('*                     Unused resource file removal completed!                     *'));
 }
 
 /// Enumeration of output colors.
