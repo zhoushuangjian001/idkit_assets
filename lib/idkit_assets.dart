@@ -15,7 +15,7 @@ void run({String? name}) {
   AssetsTempFDCreate.createAssetsTempFD();
   AssetsManageCreate.createAssetsMange(clsName: name);
   AssetsPubSpecCreate.createAssetsPubspec();
-  // AssetsRenamePubspec.renamePubspec();
+  AssetsRenamePubspec.renamePubspec();
   AssetsResultCheck.checkRun();
 }
 

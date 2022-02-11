@@ -19,7 +19,7 @@ class AssetsPubSpecCreate {
         for (var item in tadLines) {
           tpbFile.writeAsStringSync('    - $item\n', mode: FileMode.append);
         }
-      } else if (assetsORegExp.hasMatch(tirmLine) || assetsORegExp.hasMatch(tirmLine)) {
+      } else if (assetsORegExp.hasMatch(tirmLine) || assetsRegExp.hasMatch(tirmLine)) {
         ;
       } else {
         tpbFile.writeAsStringSync('$line\n', mode: FileMode.append);
