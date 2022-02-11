@@ -49,4 +49,26 @@ class AssetsTool {
     }
     return content;
   }
+
+  /// Determine if a file is a hidden file.
+  static bool isHideFile(String path) {
+    var res = false;
+    if (path.contains('/.')) {
+      final last = path.split('/.').last;
+      res = !last.contains('/');
+    }
+    return res;
+  }
+
+  /// Determine if a file has content.
+  static bool isContent(String path) {
+    var result = false;
+    final aFile = AssetsFile(path);
+    if (aFile.exist) {
+      final file = aFile.file;
+      final fileStat = file.statSync();
+      result = fileStat.size != 0;
+    }
+    return result;
+  }
 }

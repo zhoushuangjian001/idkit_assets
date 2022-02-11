@@ -5,7 +5,6 @@ const List<String> cmdList = [
   'rename',
   '-rn',
   'unused',
-  '-u',
   '-uc',
   '-ur',
   'filter',

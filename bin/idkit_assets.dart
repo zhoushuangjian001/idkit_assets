@@ -1,3 +1,4 @@
+import 'package:idkit_assets/idkit_assets.dart' as idkit_main;
 import 'package:idkit_assets/src/func/assets_create.dart';
 import 'package:idkit_assets/src/func/assets_manage_create.dart';
 import 'package:idkit_assets/src/func/assets_pubspec_create.dart';
@@ -29,18 +30,31 @@ void main(List<String> arguments) {
     switch (firstArg) {
       case 'run':
       case '-r':
-        AssetsCreate.createAssetsDirectory();
-        AssetsTempFDCreate.createAssetsTempFD();
-        AssetsManageCreate.createAssetsMange();
-        AssetsPubSpecCreate.createAssetsPubspec();
+        idkit_main.run();
         break;
       case 'rename':
       case '-rn':
         final name = arguments.length > 1 ? arguments[1] : null;
-        AssetsCreate.createAssetsDirectory();
-        AssetsTempFDCreate.createAssetsTempFD();
-        AssetsManageCreate.createAssetsMange(clsName: name);
-        AssetsPubSpecCreate.createAssetsPubspec();
+        idkit_main.run(name: name);
+        break;
+      case 'unused':
+        if (arguments.length > 1) {
+          final arg2 = arguments[1];
+          final cmd = arg2.trim();
+          if (cmd == 'check') {
+            idkit_main.checkUnusedAssets();
+          } else if (cmd == 'remove') {
+            idkit_main.removeUnusedAssets();
+          } else {
+            AssetsLog.unknown();
+          }
+        } else {}
+        break;
+      case '-uc':
+        idkit_main.checkUnusedAssets();
+        break;
+      case '-ur':
+        idkit_main.removeUnusedAssets();
         break;
       default:
         AssetsLog.unknown();

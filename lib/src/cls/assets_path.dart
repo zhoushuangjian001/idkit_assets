@@ -41,4 +41,7 @@ class AssetsPath {
 
   /// Resource naming unqualified file path.
   String get nameNoRegularPath => join(_rootPath, 'temp_assets_unregular.txt');
+
+  /// The resource record file path is not used in the project.
+  String get unusedAssetsPath => join(_rootPath, 'temp_unused_assets.txt');
 }
