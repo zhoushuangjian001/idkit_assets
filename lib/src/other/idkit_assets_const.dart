@@ -31,3 +31,7 @@ final assetsORegExp = RegExp(r'^(#   )?- [(\w)./]+.(png|jpeg|webp)$');
 
 /// New citation rules for project resources.
 final assetsRegExp = RegExp(r'^- [(\w)./]+/$');
+
+const String help = '''
+
+''';

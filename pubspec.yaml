@@ -16,6 +16,9 @@ dev_dependencies:
 executables:
   idkit_assets: idkit_assets
 
+assets:
+  - lib/src/other/assets_help.txt
+
 dependencies:
   io: ^1.0.3
   path: ^1.8.1
