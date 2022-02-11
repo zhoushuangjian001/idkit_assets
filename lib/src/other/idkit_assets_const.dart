@@ -33,5 +33,29 @@ final assetsORegExp = RegExp(r'^(#   )?- [(\w)./]+.(png|jpeg|webp)$');
 final assetsRegExp = RegExp(r'^- [(\w)./]+/$');
 
 const String help = '''
+The manual for the `idkit_assets` asset management script is as follows:
 
+    Optional            Description
+    ___________________________________________________________________
+        run             Regular running of resource management scripts.
+         -r             Same as `run` introduction.
+ 
+     rename             Change the resource reference class name.For example 
+                        `idkit_assets rename IdkitAssets`.
+        -rn             Same as `rename` introduction.
+ 
+    unused:
+      check             Check for unused resources in the project.For example 
+                        `idkit_assets unused check`.
+     remove             Remove unused resources from the project.For example 
+                        `idkit_assets unused remove`.
+      
+        -uc             Same as `check` introduction.
+        -ur             Same as `remove` introduction.
+ 
+       help             Output the manual for idkit_assets.
+         -h             Same as `help` introduction.
+    ___________________________________________________________________
+
+If the above description does not solve your problem, please contact the developer.
 ''';
