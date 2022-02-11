@@ -31,5 +31,5 @@ void removeUnusedAssets() {
 /// Output the manual for idkit_assets.
 void help() {
   final content = mConst.help;
-  AssetsLog.out('\n$content\n', type: OutColor.yellow);
+  AssetsLog.out('$content', type: OutColor.yellow);
 }
