@@ -21,7 +21,7 @@ const String readme =
 final clsNameRegExp = RegExp(r'^class [A-Z](\w)* {$');
 
 /// Resource file naming convention.
-final assetsNameRegExp = RegExp(r'[a-z](\w)*$');
+final assetsNameRegExp = RegExp(r'^[a-z](\w)*$');
 
 /// The regularity of assets in the project release specification.
 final pubspecAssetsRegExp = RegExp(r'^(# )?assets:$');
@@ -36,7 +36,7 @@ const String help = '''
 The manual for the `idkit_assets` asset management script is as follows:
 
     Optional            Description
-    ___________________________________________________________________
+    __________________________________________________________________________
         run             Regular running of resource management scripts.
          -r             Same as `run` introduction.
  
@@ -55,6 +55,6 @@ The manual for the `idkit_assets` asset management script is as follows:
  
        help             Output the manual for idkit_assets.
          -h             Same as `help` introduction.
-    ___________________________________________________________________
+    __________________________________________________________________________
 
 If the above description does not solve your problem, please contact the developer.''';

@@ -50,14 +50,12 @@ class AssetsResultCheck {
     }
 
     late final tDAFile = AssetsFile(path.tempDAssetsPath);
-    final isExist2 = AssetsTool.isContent(path.tempDAssetsPath);
-    if (!isExist2) {
+    if (tDAFile.exist) {
       tDAFile.delete();
     }
 
     late final tFAFile = AssetsFile(path.tempFAssetsPath);
-    final isExist3 = AssetsTool.isContent(path.tempFAssetsPath);
-    if (!isExist3) {
+    if (tFAFile.exist) {
       tFAFile.delete();
     }
 
