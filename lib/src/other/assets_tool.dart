@@ -71,4 +71,21 @@ class AssetsTool {
     }
     return result;
   }
+
+  /// Get the number of times the content of the specified condition appears in the file.
+  static int count(String path, String rule) {
+    var count = 0;
+    final fileA = AssetsFile(path);
+    if (fileA.exist) {
+      final file = fileA.file;
+      final fileLines = file.readAsLinesSync();
+      for (var line in fileLines) {
+        final isExist = line.contains(rule);
+        if (isExist) {
+          count++;
+        }
+      }
+    }
+    return count;
+  }
 }

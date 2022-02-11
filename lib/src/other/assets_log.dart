@@ -53,7 +53,10 @@ class AssetsLog {
                    you can run `idkit_assets help` for more help.\n'''));
 
   /// Project Resource Management Success.
-  static void success() => print(green.wrap('*                       Project Resource Management Success!                       *'));
+  static void success() => print(green.wrap('*                       Project Resource Management Success!                        *'));
+
+  /// Check completion prompt for unused resources in the project.
+  static void unusedACSuccess() => print(green.wrap('*          The resource file check is not used in the project is complete.        *'));
 }
 
 /// Enumeration of output colors.

@@ -19,6 +19,7 @@ void run({String? name}) {
 /// Check for unused resource methods.
 void checkUnusedAssets() {
   AssetsUnused.checkAssetsUnused();
+  AssetsResultCheck.checkUnused();
 }
 
 /// Remove unused resource method.

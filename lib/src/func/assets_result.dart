@@ -18,4 +18,22 @@ class AssetsResultCheck {
       AssetsLog.success();
     }
   }
+
+  /// Check logs for unused resources.
+  static void checkUnused() {
+    final path = AssetsPath();
+    final isContent = AssetsTool.isContent(path.unusedAssetsPath);
+    if (isContent) {
+      final heard = '\nThe results of the unused resource check in the project are as follows:\n';
+      AssetsLog.out('$heard', type: OutColor.red);
+      final irRegularFile = AssetsFile(path.unusedAssetsPath).file;
+      final content = irRegularFile.readAsStringSync();
+      AssetsLog.out('$content', type: OutColor.red);
+      final count = AssetsTool.count(path.unusedAssetsPath, 'PATH:');
+      final end = '\nThere are a total of $count unused resource files.';
+      AssetsLog.out('$end', type: OutColor.red);
+    } else {
+      AssetsLog.unusedACSuccess();
+    }
+  }
 }
