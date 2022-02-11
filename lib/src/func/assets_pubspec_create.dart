@@ -13,11 +13,11 @@ class AssetsPubSpecCreate {
     for (var line in linesDF) {
       final tirmLine = line.trim();
       if (pubspecAssetsRegExp.hasMatch(tirmLine)) {
-        tpbFile.writeAsStringSync('\tassets:\n', mode: FileMode.append);
+        tpbFile.writeAsStringSync('  assets:\n', mode: FileMode.append);
         final tADFile = AssetsFile(path.tempDAssetsPath).file;
         final tadLines = tADFile.readAsLinesSync();
         for (var item in tadLines) {
-          tpbFile.writeAsStringSync('\t\t- $item\n', mode: FileMode.append);
+          tpbFile.writeAsStringSync('    - $item\n', mode: FileMode.append);
         }
       } else if (assetsORegExp.hasMatch(tirmLine) || assetsORegExp.hasMatch(tirmLine)) {
         ;
