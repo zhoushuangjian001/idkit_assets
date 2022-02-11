@@ -4,9 +4,13 @@ import 'package:idkit_assets/src/other/assets_tool.dart';
 import 'package:idkit_assets/src/other/idkit_assets_const.dart';
 
 void main(List<String> arguments) {
+  // Start.
+  AssetsLog.start();
+
   // Check the input command.
   if (arguments.isEmpty) {
     AssetsLog.unknown();
+    AssetsLog.end();
     return;
   }
 
@@ -14,11 +18,9 @@ void main(List<String> arguments) {
   final firstArg = arguments.first;
   if (!cmdList.contains(firstArg)) {
     AssetsLog.unknown();
+    AssetsLog.end();
     return;
   }
-
-  // Start.
-  AssetsLog.start();
 
   // Check if execution is full project.
   if (AssetsTool.isIntact) {
@@ -44,7 +46,9 @@ void main(List<String> arguments) {
           } else {
             AssetsLog.unknown();
           }
-        } else {}
+        } else {
+          AssetsLog.incomplete();
+        }
         break;
       case '-uc':
         idkit_main.checkUnusedAssets();

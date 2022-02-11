@@ -47,6 +47,13 @@ class AssetsLog {
 
   /// Unused resource removal result prompt.
   static void rUnusedASuccess() => print(green.wrap('*                        Unused resource removal completed!                        *'));
+
+  /// Incomplete run command prompt.
+  static void incomplete() => print(lightYellow.wrap('''\n                           The run command is incomplete,
+                   you can run `idkit_assets help` for more help.\n'''));
+
+  /// Project Resource Management Success.
+  static void success() => print(green.wrap('                        Project Resource Management Success!'));
 }
 
 /// Enumeration of output colors.

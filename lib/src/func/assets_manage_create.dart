@@ -14,7 +14,7 @@ class AssetsManageCreate {
     // Get the temporary file object of the resource management file path.
     final assetsTFFile = AssetsFile(path.tempFAssetsPath).file;
     final assetsTDFile = AssetsFile(path.tempDAssetsPath).file;
-    final assetsNURFile = AssetsFile(path.nameNoRegularPath).blank;
+    final assetsNURFile = AssetsFile(path.nameIrRegularPath).blank;
     // Create manage file.
     final linesTD = assetsTDFile.readAsLinesSync();
     final linesTF = assetsTFFile.readAsLinesSync();
