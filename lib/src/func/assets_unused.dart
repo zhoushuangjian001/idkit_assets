@@ -65,13 +65,15 @@ class AssetsUnused {
       if (lines.isNotEmpty) {
         for (var item in lines) {
           final fPath = item.split('PATH:').last;
-          final filePath = join(path.rootPath, fPath);
+          final filePath = join(path.rootPath, fPath.trim());
+          print(filePath);
           final fFile = AssetsFile(filePath);
           if (fFile.exist) {
             fFile.delete();
           }
         }
         AssetsLog.removeUnusedAssestSuccess();
+        unFile.delete();
       } else {
         AssetsLog.uUnusedAssets();
       }
