@@ -76,7 +76,7 @@ class AssetsUnused {
         AssetsLog.uUnusedAssets();
       }
     } else {
-      AssetsLog.rUnusedA();
+      AssetsLog.rUnusedAPreconditions();
     }
   }
 }

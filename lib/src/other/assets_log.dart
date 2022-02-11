@@ -42,8 +42,8 @@ class AssetsLog {
                `idkit_assets rename xx` command to initialize it.\n'''));
 
   /// No unused resource record prompts.
-  static void rUnusedA() => print(lightYellow.wrap('''\n        Before removing unused files, run the `idkit_assets unused check` or
-            `idkit_assets -uc` command to check for unused asset files.\n'''));
+  static void rUnusedAPreconditions() => print(lightYellow.wrap('''\n                     To use the script to remove unused assets, 
+      First check the unused asset files, you can run `idkit_assets unused check`.\n'''));
 
   /// Unused resource removal result prompt.
   static void rUnusedASuccess() => print(green.wrap('*                        Unused resource removal completed!                        *'));
@@ -59,10 +59,11 @@ class AssetsLog {
   static void unusedACSuccess() => print(green.wrap('*          The resource file check is not used in the project is complete.        *'));
 
   /// No unused resource files.
-  static void uUnusedAssets() => print(green.wrap('*                              No unused resource files!                              *'));
+  static void uUnusedAssets() => print(green.wrap('*                              No unused resource files!                             *'));
 
   /// Unused resource file removal completed.
-  static void removeUnusedAssestSuccess() => print(green.wrap('*                     Unused resource file removal completed!                     *'));
+  static void removeUnusedAssestSuccess() =>
+      print(green.wrap('*                      Unused resource file removal completed!                       *'));
 }
 
 /// Enumeration of output colors.
