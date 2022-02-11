@@ -9,11 +9,11 @@ class AssetsResultCheck {
     final path = AssetsPath();
     final isContent = AssetsTool.isContent(path.nameIrRegularPath);
     if (isContent) {
-      final heard = 'The project resources do not meet the specifications as follows:\n';
+      final heard = '\nThe project resources do not meet the specifications as follows:\n';
+      AssetsLog.out('$heard', type: OutColor.red);
       final irRegularFile = AssetsFile(path.nameIrRegularPath).file;
       final content = irRegularFile.readAsStringSync();
-      final result = heard + content;
-      AssetsLog.out('\n$result\n', type: OutColor.red);
+      AssetsLog.out('$content', type: OutColor.red);
     } else {
       AssetsLog.success();
     }

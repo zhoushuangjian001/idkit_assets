@@ -53,7 +53,7 @@ class AssetsLog {
                    you can run `idkit_assets help` for more help.\n'''));
 
   /// Project Resource Management Success.
-  static void success() => print(green.wrap('                        Project Resource Management Success!'));
+  static void success() => print(green.wrap('*                       Project Resource Management Success!                       *'));
 }
 
 /// Enumeration of output colors.
