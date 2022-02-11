@@ -16,7 +16,7 @@ class AssetsResultCheck {
       AssetsLog.out('$content', type: OutColor.red);
       final count = AssetsTool.count(path.nameIrRegularPath, 'REASON:');
       final end = 'There are a total of $count non-standard resource files.';
-      AssetsLog.out('\n$end', type: OutColor.red);
+      AssetsLog.out('$end', type: OutColor.red);
     } else {
       AssetsLog.success();
     }

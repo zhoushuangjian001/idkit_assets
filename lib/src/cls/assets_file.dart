@@ -23,6 +23,11 @@ class AssetsFile {
     return file;
   }
 
+  /// File renaming.
+  void rename(String name) {
+    file.renameSync(name);
+  }
+
   /// File deletion.
   void delete() => file.deleteSync();
 }

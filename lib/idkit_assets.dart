@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:idkit_assets/src/func/assets_create.dart';
 import 'package:idkit_assets/src/func/assets_manage_create.dart';
 import 'package:idkit_assets/src/func/assets_pubspec_create.dart';
+import 'package:idkit_assets/src/func/assets_rename_pubspec.dart';
 import 'package:idkit_assets/src/func/assets_result.dart';
 import 'package:idkit_assets/src/func/assets_tfd_create.dart';
 import 'package:idkit_assets/src/func/assets_unused.dart';
@@ -14,6 +15,7 @@ void run({String? name}) {
   AssetsTempFDCreate.createAssetsTempFD();
   AssetsManageCreate.createAssetsMange(clsName: name);
   AssetsPubSpecCreate.createAssetsPubspec();
+  AssetsRenamePubspec.renamePubspec();
   AssetsResultCheck.checkRun();
 }
 
