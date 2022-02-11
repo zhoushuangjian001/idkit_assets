@@ -57,5 +57,4 @@ The manual for the `idkit_assets` asset management script is as follows:
          -h             Same as `help` introduction.
     ___________________________________________________________________
 
-If the above description does not solve your problem, please contact the developer.
-''';
+If the above description does not solve your problem, please contact the developer.''';

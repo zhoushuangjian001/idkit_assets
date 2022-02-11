@@ -39,4 +39,32 @@ class AssetsResultCheck {
       AssetsLog.unusedACSuccess();
     }
   }
+
+  /// Inspection of project temporary files.
+  static void checkTemporaryFiles() {
+    final path = AssetsPath();
+    late final uRAFile = AssetsFile(path.nameIrRegularPath);
+    final isExist1 = AssetsTool.isContent(path.nameIrRegularPath);
+    if (isExist1) {
+      uRAFile.delete();
+    }
+
+    late final tDAFile = AssetsFile(path.tempDAssetsPath);
+    final isExist2 = AssetsTool.isContent(path.tempDAssetsPath);
+    if (isExist2) {
+      tDAFile.delete();
+    }
+
+    late final tFAFile = AssetsFile(path.tempFAssetsPath);
+    final isExist3 = AssetsTool.isContent(path.tempFAssetsPath);
+    if (isExist3) {
+      tFAFile.delete();
+    }
+
+    late final uUAFile = AssetsFile(path.unusedAssetsPath);
+    final isExist4 = AssetsTool.isContent(path.unusedAssetsPath);
+    if (isExist4) {
+      uUAFile.delete();
+    }
+  }
 }
