@@ -2,6 +2,9 @@ import 'dart:io';
 import 'package:idkit_assets/src/cls/assets_directory.dart';
 import 'package:idkit_assets/src/cls/assets_file.dart';
 import 'package:idkit_assets/src/cls/assets_path.dart';
+import 'package:idkit_assets/src/func/assets_manage_create.dart';
+import 'package:idkit_assets/src/func/assets_pubspec_create.dart';
+import 'package:idkit_assets/src/func/assets_tfd_create.dart';
 import 'package:idkit_assets/src/other/assets_log.dart';
 import 'package:idkit_assets/src/other/assets_tool.dart';
 import 'package:path/path.dart';
@@ -73,6 +76,10 @@ class AssetsUnused {
         }
         AssetsLog.removeUnusedAssestSuccess();
         unFile.delete();
+        // Update project resource configuration.
+        AssetsTempFDCreate.createAssetsTempFD();
+        AssetsManageCreate.createAssetsMange();
+        AssetsPubSpecCreate.createAssetsPubspec();
       } else {
         AssetsLog.uUnusedAssets();
       }
