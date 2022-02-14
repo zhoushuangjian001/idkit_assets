@@ -25,6 +25,8 @@ class AssetsTempFDCreate {
         final isExist = AssetsTool.isDContent(fPath);
         if (isExist) {
           assetsTempDFile.writeAsStringSync('$rFPath/\n', mode: FileMode.append);
+        } else {
+          AssetsDirectory(fPath).delete();
         }
       } else if (isF) {
         // Filter hidden files.
