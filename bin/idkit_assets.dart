@@ -62,7 +62,7 @@ void main(List<String> arguments) {
         String? size;
         if (arguments.length >= 2) {
           final limit = arguments[1];
-          final isRule = RegExp(r'[0-9]*').hasMatch(limit);
+          final isRule = RegExp(r'^[0-9]+$').hasMatch(limit);
           if (isRule) {
             size = limit;
           } else {

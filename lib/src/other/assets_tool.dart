@@ -103,19 +103,23 @@ class AssetsTool {
 
   /// Project file size formatting.
   static String sizeFormat(int byte) {
-    var desc = '$byte B';
+    var rs = byte.toStringAsFixed(2);
+    var desc = '$rs B';
     final kb = byte / 1024;
     if (kb > 1) {
       final mb = kb / 1024;
       if (mb > 1) {
         final gb = mb / 1024;
         if (gb > 1) {
-          desc = '$gb GB';
+          rs = gb.toStringAsFixed(2);
+          desc = '$rs GB';
         } else {
-          desc = '$mb MB';
+          rs = mb.toStringAsFixed(2);
+          desc = '$rs MB';
         }
       } else {
-        desc = '$kb KB';
+        rs = kb.toStringAsFixed(2);
+        desc = '$rs KB';
       }
     }
     return desc;

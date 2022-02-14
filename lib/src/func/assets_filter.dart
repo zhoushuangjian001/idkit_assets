@@ -26,7 +26,7 @@ class AssetsFilter {
               final rpath = AssetsTool.getRAssetsPath(fpath);
               bigFile.writeAsStringSync('PATH: $rpath\n', mode: FileMode.append);
               final sizeDesc = AssetsTool.sizeFormat(csize);
-              bigFile.writeAsStringSync('SIZE: $sizeDesc\n', mode: FileMode.append);
+              bigFile.writeAsStringSync('SIZE: $sizeDesc\n\n', mode: FileMode.append);
             }
           }
         }
