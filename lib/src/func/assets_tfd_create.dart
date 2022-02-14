@@ -23,6 +23,8 @@ class AssetsTempFDCreate {
       final rFPath = AssetsTool.getRAssetsPath(fPath);
       if (isD) {
         final isExist = AssetsTool.isDContent(fPath);
+        print(isExist);
+        print(fPath);
         if (isExist) {
           assetsTempDFile.writeAsStringSync('$rFPath/\n', mode: FileMode.append);
         } else {
