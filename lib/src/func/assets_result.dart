@@ -90,7 +90,7 @@ class AssetsResultCheck {
         AssetsLog.out('$heard', type: OutColor.red);
         final content = bAFile.file.readAsStringSync();
         AssetsLog.out('$content', type: OutColor.red);
-        final count = AssetsTool.count(path.unusedAssetsPath, 'PATH:');
+        final count = AssetsTool.count(bAPAth, 'PATH:');
         final end = 'There are a total of $count resource files that exceed the specified size.';
         AssetsLog.out('$end', type: OutColor.red);
       } else {
