@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:idkit_assets/src/func/assets_create.dart';
 import 'package:idkit_assets/src/func/assets_filter.dart';
 import 'package:idkit_assets/src/func/assets_manage_create.dart';
@@ -8,7 +7,7 @@ import 'package:idkit_assets/src/func/assets_result.dart';
 import 'package:idkit_assets/src/func/assets_tfd_create.dart';
 import 'package:idkit_assets/src/func/assets_unused.dart';
 import 'package:idkit_assets/src/other/assets_log.dart';
-import 'package:idkit_assets/src/other/idkit_assets_const.dart' as mConst;
+import 'package:idkit_assets/src/other/idkit_assets_const.dart' as mconst;
 
 /// Regular execution of resource management scripts.
 void run({String? name}) {
@@ -39,6 +38,6 @@ void filterBigAssets({String? size}) {
 
 /// Output the manual for idkit_assets.
 void help() {
-  final content = mConst.help;
+  final content = mconst.help;
   AssetsLog.out('$content', type: OutColor.yellow);
 }
