@@ -46,7 +46,7 @@ class AssetsUnused {
           }
           if (count == 0) {
             final path = lineTirm.split('\'')[1];
-            unAFile.writeAsStringSync('PATH: $path\n', mode: FileMode.append);
+            unAFile.writeAsStringSync('\nPATH: $path\n', mode: FileMode.append);
           }
         }
       }

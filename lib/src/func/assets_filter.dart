@@ -24,9 +24,9 @@ class AssetsFilter {
             final bsize = (int.tryParse(limitSize) ?? 0) * 1024;
             if (csize >= bsize) {
               final rpath = AssetsTool.getRAssetsPath(fpath);
-              bigFile.writeAsStringSync('PATH: $rpath\n', mode: FileMode.append);
+              bigFile.writeAsStringSync('\nPATH: $rpath\n', mode: FileMode.append);
               final sizeDesc = AssetsTool.sizeFormat(csize);
-              bigFile.writeAsStringSync('SIZE: $sizeDesc\n\n', mode: FileMode.append);
+              bigFile.writeAsStringSync('\nSIZE: $sizeDesc\n', mode: FileMode.append);
             }
           }
         }
