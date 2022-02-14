@@ -86,7 +86,7 @@ class AssetsResultCheck {
     if (bAFile.exist) {
       final isContent = AssetsTool.isContent(bAPAth);
       if (isContent) {
-        final heard = 'Filter results for files larger than the specified size:\n';
+        final heard = 'Filter results for files larger than the specified size:';
         AssetsLog.out('$heard', type: OutColor.red);
         final content = bAFile.file.readAsStringSync();
         AssetsLog.out('$content', type: OutColor.red);
