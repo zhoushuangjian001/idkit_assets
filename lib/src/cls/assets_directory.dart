@@ -21,5 +21,5 @@ class AssetsDirectory {
   void createReadme() {}
 
   /// Directory deletion.
-  void delete() => directory.deleteSync();
+  void delete() => directory.deleteSync(recursive: true);
 }
