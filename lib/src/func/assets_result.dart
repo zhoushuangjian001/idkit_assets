@@ -64,5 +64,40 @@ class AssetsResultCheck {
     if (!isExist4) {
       uUAFile.delete();
     }
+
+    late final bAFile = AssetsFile(path.bigAssetsPath);
+    final isExist5 = AssetsTool.isContent(path.bigAssetsPath);
+    if (!isExist5) {
+      bAFile.delete();
+    }
+
+    late final nameIregureFile = AssetsFile(path.nameIrRegularPath);
+    final isExist6 = AssetsTool.isContent(path.nameIrRegularPath);
+    if (!isExist6) {
+      nameIregureFile.delete();
+    }
+  }
+
+  /// Project resource filtered checks.
+  static void checkFilter() {
+    final path = AssetsPath();
+    final bAPAth = path.bigAssetsPath;
+    final bAFile = AssetsFile(bAPAth);
+    if (bAFile.exist) {
+      final isContent = AssetsTool.isContent(bAPAth);
+      if (isContent) {
+        final heard = 'Filter results for files larger than the specified size:\n';
+        AssetsLog.out('$heard', type: OutColor.red);
+        final content = bAFile.file.readAsStringSync();
+        AssetsLog.out('$content', type: OutColor.red);
+        final count = AssetsTool.count(path.unusedAssetsPath, 'PATH:');
+        final end = 'There are a total of $count resource files that exceed the specified size.';
+        AssetsLog.out('$end', type: OutColor.red);
+      } else {
+        AssetsLog.unOverSizeAssets();
+      }
+    } else {
+      AssetsLog.unOverSizeAssets();
+    }
   }
 }

@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:idkit_assets/src/func/assets_create.dart';
+import 'package:idkit_assets/src/func/assets_filter.dart';
 import 'package:idkit_assets/src/func/assets_manage_create.dart';
 import 'package:idkit_assets/src/func/assets_pubspec_create.dart';
 import 'package:idkit_assets/src/func/assets_rename_pubspec.dart';
@@ -28,6 +29,12 @@ void checkUnusedAssets() {
 /// Remove unused resource method.
 void removeUnusedAssets() {
   AssetsUnused.removeAssetsUnused();
+}
+
+/// Large project resource file filtering.
+void filterBigAssets({String? size}) {
+  AssetsFilter.filterAssets(size: size);
+  AssetsResultCheck.checkFilter();
 }
 
 /// Output the manual for idkit_assets.

@@ -57,6 +57,22 @@ void main(List<String> arguments) {
       case '-ur':
         idkit_main.removeUnusedAssets();
         break;
+      case 'filter':
+      case '-f':
+        String? size;
+        if (arguments.length >= 2) {
+          final limit = arguments[1];
+          final isRule = RegExp(r'[0-9]*').hasMatch(limit);
+          if (isRule) {
+            size = limit;
+          } else {
+            AssetsLog.unIdentifyCmd();
+            AssetsLog.end();
+            return;
+          }
+        }
+        idkit_main.filterBigAssets(size: size);
+        break;
       case 'help':
       case '-h':
         idkit_main.help();

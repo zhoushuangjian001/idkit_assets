@@ -88,4 +88,36 @@ class AssetsTool {
     }
     return count;
   }
+
+  /// Get the size of the specified file.
+  static int size(String path) {
+    var size = 0;
+    final fileA = AssetsFile(path);
+    if (fileA.exist) {
+      final file = fileA.file;
+      final fileStat = file.statSync();
+      size = fileStat.size;
+    }
+    return size;
+  }
+
+  /// Project file size formatting.
+  static String sizeFormat(int byte) {
+    var desc = '$byte B';
+    final kb = byte / 1024;
+    if (kb > 1) {
+      final mb = kb / 1024;
+      if (mb > 1) {
+        final gb = mb / 1024;
+        if (gb > 1) {
+          desc = '$gb GB';
+        } else {
+          desc = '$mb MB';
+        }
+      } else {
+        desc = '$kb KB';
+      }
+    }
+    return desc;
+  }
 }

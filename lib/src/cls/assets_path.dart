@@ -44,4 +44,7 @@ class AssetsPath {
 
   /// The resource record file path is not used in the project.
   String get unusedAssetsPath => join(_rootPath, 'temp_unused_assets.txt');
+
+  /// Project resource large file record file path.
+  String get bigAssetsPath => join(_rootPath, 'temp_big_assets.txt');
 }
