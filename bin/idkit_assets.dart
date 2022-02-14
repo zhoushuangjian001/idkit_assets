@@ -93,9 +93,6 @@ void main(List<String> arguments) {
     AssetsLog.unIntact();
   }
 
-  // Clear redundant files.
-  AssetsResultCheck.checkTemporaryFiles();
-
   // End.
   AssetsLog.end();
 }

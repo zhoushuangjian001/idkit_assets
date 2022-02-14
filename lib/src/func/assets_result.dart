@@ -26,26 +26,28 @@ class AssetsResultCheck {
   static void checkUnused() {
     final path = AssetsPath();
     final isContent = AssetsTool.isContent(path.unusedAssetsPath);
+    final uAFile = AssetsFile(path.unusedAssetsPath);
     if (isContent) {
       final heard = 'The results of the unused resource check in the project are as follows:\n';
       AssetsLog.out('$heard', type: OutColor.red);
-      final irRegularFile = AssetsFile(path.unusedAssetsPath).file;
+      final irRegularFile = uAFile.file;
       final content = irRegularFile.readAsStringSync();
       AssetsLog.out('$content', type: OutColor.red);
       final count = AssetsTool.count(path.unusedAssetsPath, 'PATH:');
       final end = 'There are a total of $count unused resource files.';
       AssetsLog.out('$end', type: OutColor.red);
     } else {
+      uAFile.delete();
       AssetsLog.unusedACSuccess();
     }
   }
 
-  /// Inspection of project temporary files.
-  static void checkTemporaryFiles() {
+  /// Regular script execution delete.
+  static void runDelete() {
     final path = AssetsPath();
     late final uRAFile = AssetsFile(path.nameIrRegularPath);
-    final isExist1 = AssetsTool.isContent(path.nameIrRegularPath);
-    if (!isExist1) {
+    final isExist = AssetsTool.isContent(path.nameIrRegularPath);
+    if (!isExist) {
       uRAFile.delete();
     }
 
@@ -60,21 +62,13 @@ class AssetsResultCheck {
     }
 
     late final uUAFile = AssetsFile(path.unusedAssetsPath);
-    final isExist4 = AssetsTool.isContent(path.unusedAssetsPath);
-    if (!isExist4) {
+    if (uUAFile.exist) {
       uUAFile.delete();
     }
 
     late final bAFile = AssetsFile(path.bigAssetsPath);
-    final isExist5 = AssetsTool.isContent(path.bigAssetsPath);
-    if (!isExist5) {
+    if (bAFile.exist) {
       bAFile.delete();
-    }
-
-    late final nameIregureFile = AssetsFile(path.nameIrRegularPath);
-    final isExist6 = AssetsTool.isContent(path.nameIrRegularPath);
-    if (!isExist6) {
-      nameIregureFile.delete();
     }
   }
 
@@ -94,6 +88,7 @@ class AssetsResultCheck {
         final end = 'There are a total of $count resource files that exceed the specified size.';
         AssetsLog.out('$end', type: OutColor.red);
       } else {
+        bAFile.delete();
         AssetsLog.unOverSizeAssets();
       }
     } else {

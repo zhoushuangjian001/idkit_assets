@@ -18,6 +18,7 @@ void run({String? name}) {
   AssetsPubSpecCreate.createAssetsPubspec();
   AssetsRenamePubspec.renamePubspec();
   AssetsResultCheck.checkRun();
+  AssetsResultCheck.runDelete();
 }
 
 /// Check for unused resource methods.
