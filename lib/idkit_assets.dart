@@ -29,6 +29,9 @@ void checkUnusedAssets() {
 /// Remove unused resource method.
 void removeUnusedAssets() {
   AssetsUnused.removeAssetsUnused();
+  AssetsTempFDCreate.createAssetsTempFD();
+  AssetsManageCreate.createAssetsMange();
+  AssetsPubSpecCreate.createAssetsPubspec();
 }
 
 /// Large project resource file filtering.
