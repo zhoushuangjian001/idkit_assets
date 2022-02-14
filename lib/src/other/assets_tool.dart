@@ -139,7 +139,6 @@ class AssetsTool {
           break;
         }
       }
-      result = lines.isNotEmpty;
     }
     return result;
   }
