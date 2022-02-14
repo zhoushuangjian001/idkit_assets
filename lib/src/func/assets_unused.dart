@@ -4,6 +4,7 @@ import 'package:idkit_assets/src/cls/assets_file.dart';
 import 'package:idkit_assets/src/cls/assets_path.dart';
 import 'package:idkit_assets/src/func/assets_manage_create.dart';
 import 'package:idkit_assets/src/func/assets_pubspec_create.dart';
+import 'package:idkit_assets/src/func/assets_rename_pubspec.dart';
 import 'package:idkit_assets/src/func/assets_tfd_create.dart';
 import 'package:idkit_assets/src/other/assets_log.dart';
 import 'package:idkit_assets/src/other/assets_tool.dart';
@@ -80,6 +81,7 @@ class AssetsUnused {
         AssetsTempFDCreate.createAssetsTempFD();
         AssetsManageCreate.createAssetsMange();
         AssetsPubSpecCreate.createAssetsPubspec();
+        AssetsRenamePubspec.renamePubspec();
       } else {
         AssetsLog.uUnusedAssets();
       }
