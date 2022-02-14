@@ -66,7 +66,6 @@ class AssetsUnused {
         for (var item in lines) {
           final fPath = item.split('PATH:').last;
           final filePath = join(path.rootPath, fPath.trim());
-          print(filePath);
           final fFile = AssetsFile(filePath);
           if (fFile.exist) {
             fFile.delete();

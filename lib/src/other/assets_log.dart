@@ -80,13 +80,13 @@ class AssetsLog {
   static void unFilterAssets() => print(green.wrap('''
 *                                                                                    *
 *                There are no resource files in the project to filter!               *
-*'''));
+*                                                                                    *'''));
 
   /// There are no resource files in the project that exceed the specified size.
   static void unOverSizeAssets() => print(green.wrap('''
 *                                                                                    *
 *     There are no resource files in the project that exceed the specified size.     *
-*'''));
+*                                                                                    *'''));
 
   /// Cannot be a recognized execution order.
   static void unIdentifyCmd() => print(lightYellow.wrap('''
