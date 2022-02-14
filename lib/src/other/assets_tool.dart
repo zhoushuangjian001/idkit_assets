@@ -124,4 +124,16 @@ class AssetsTool {
     }
     return desc;
   }
+
+  /// Check if there is a file in a directory.
+  static bool isDContent(String path) {
+    var result = false;
+    final dDirectory = AssetsDirectory(path);
+    if (dDirectory.exist) {
+      final dd = dDirectory.directory;
+      final lines = dd.listSync(recursive: true);
+      result = lines.isNotEmpty;
+    }
+    return result;
+  }
 }

@@ -22,7 +22,10 @@ class AssetsTempFDCreate {
       final isF = FileSystemEntity.isFileSync(fPath);
       final rFPath = AssetsTool.getRAssetsPath(fPath);
       if (isD) {
-        assetsTempDFile.writeAsStringSync('$rFPath/\n', mode: FileMode.append);
+        final isExist = AssetsTool.isDContent(fPath);
+        if (isExist) {
+          assetsTempDFile.writeAsStringSync('$rFPath/\n', mode: FileMode.append);
+        }
       } else if (isF) {
         // Filter hidden files.
         final hide = fPath.split('/').last;
