@@ -122,7 +122,6 @@ class AssetsTool {
         desc = '$rs KB';
       }
     }
-    print(desc);
     return desc;
   }
 }
