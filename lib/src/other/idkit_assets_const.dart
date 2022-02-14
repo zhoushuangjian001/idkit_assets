@@ -9,6 +9,8 @@ const List<String> cmdList = [
   '-ur',
   'filter',
   '-f',
+  'delete',
+  '-d',
   'help',
   '-h',
 ];
@@ -52,7 +54,16 @@ The manual for the `idkit_assets` asset management script is as follows:
       
         -uc             Same as `check` introduction.
         -ur             Same as `remove` introduction.
- 
+    
+     filter             Filter resource files in a project that exceed a 
+                        specified size，For example `idkit_assets filter 200`.
+                        If you don't pass the size the default is 200 KB.
+         -f             Same as `filter` introduction.
+     
+     delete             Delete the file at the specified path.For example 
+                        `idkit_assets delete /idkit_assets/assets/readme.txt`.
+         -d             Same as `delete` introduction.
+     
        help             Output the manual for idkit_assets.
          -h             Same as `help` introduction.
     __________________________________________________________________________

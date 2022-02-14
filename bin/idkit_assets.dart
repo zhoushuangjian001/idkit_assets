@@ -73,6 +73,15 @@ void main(List<String> arguments) {
         }
         idkit_main.filterBigAssets(size: size);
         break;
+      case 'delete':
+      case '-d':
+        if (arguments.length >= 2) {
+          final path = arguments[1];
+          idkit_main.deletePathAssets(path);
+        } else {
+          AssetsLog.incomplete();
+        }
+        break;
       case 'help':
       case '-h':
         idkit_main.help();

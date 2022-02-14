@@ -1,4 +1,5 @@
 import 'package:idkit_assets/src/func/assets_create.dart';
+import 'package:idkit_assets/src/func/assets_delete.dart';
 import 'package:idkit_assets/src/func/assets_filter.dart';
 import 'package:idkit_assets/src/func/assets_manage_create.dart';
 import 'package:idkit_assets/src/func/assets_pubspec_create.dart';
@@ -34,6 +35,11 @@ void removeUnusedAssets() {
 void filterBigAssets({String? size}) {
   AssetsFilter.filterAssets(size: size);
   AssetsResultCheck.checkFilter();
+}
+
+/// Delete the file at the specified path.
+void deletePathAssets(String path) {
+  AssetsDelete.deleteAssets(path);
 }
 
 /// Output the manual for idkit_assets.

@@ -92,6 +92,15 @@ class AssetsLog {
   static void unIdentifyCmd() => print(lightYellow.wrap('''
                           The entered command is not recognized, 
                     you can run `idkit_assets help` for more help.'''));
+
+  /// Delete the file in the specified path, the file does not exist prompt.
+  static void unDeletePath() => print(red.wrap('                  The specified file path to delete does not exist.'));
+
+  /// Delete the specified path file successfully.
+  static void deleteSuccess() => print(green.wrap('''
+*                                                                                    *
+*                             Delete file successfully.                              *
+*                                                                                    *'''));
 }
 
 /// Enumeration of output colors.
