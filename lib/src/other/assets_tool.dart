@@ -132,6 +132,7 @@ class AssetsTool {
     if (dDirectory.exist) {
       final dd = dDirectory.directory;
       final lines = dd.listSync(recursive: true);
+      print(lines);
       result = lines.isNotEmpty;
     }
     return result;
