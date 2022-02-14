@@ -132,7 +132,13 @@ class AssetsTool {
     if (dDirectory.exist) {
       final dd = dDirectory.directory;
       final lines = dd.listSync(recursive: true);
-      print(lines);
+      for (var item in lines) {
+        final isHide = AssetsTool.isHideFile(item.path);
+        if (!isHide) {
+          result = true;
+          break;
+        }
+      }
       result = lines.isNotEmpty;
     }
     return result;
