@@ -1,5 +1,4 @@
 import 'package:idkit_assets/idkit_assets.dart' as idkit_main;
-import 'package:idkit_assets/src/func/assets_result.dart';
 import 'package:idkit_assets/src/other/assets_log.dart';
 import 'package:idkit_assets/src/other/assets_tool.dart';
 import 'package:idkit_assets/src/other/idkit_assets_const.dart';

@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:idkit_assets/src/cls/assets_directory.dart';
 import 'package:idkit_assets/src/cls/assets_file.dart';
 import 'package:idkit_assets/src/cls/assets_path.dart';
