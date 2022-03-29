@@ -34,3 +34,7 @@ If you have any questions or difficulties in using the project resource manageme
 ## 1.0.1
 
 Fix the problem of temporary use of the process when the Windows system is processing the pubspec.yaml file
+
+## 1.0.2
+
+Optimize initializing empty files
