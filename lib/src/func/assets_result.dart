@@ -9,7 +9,8 @@ class AssetsResultCheck {
     final path = AssetsPath();
     final isContent = AssetsTool.isContent(path.nameIrRegularPath);
     if (isContent) {
-      final heard = 'The project resources do not meet the specifications as follows:';
+      final heard =
+          'The project resources do not meet the specifications as follows:';
       AssetsLog.out('$heard', type: OutColor.red);
       final irRegularFile = AssetsFile(path.nameIrRegularPath).file;
       final content = irRegularFile.readAsStringSync();
@@ -28,7 +29,8 @@ class AssetsResultCheck {
     final isContent = AssetsTool.isContent(path.unusedAssetsPath);
     final uAFile = AssetsFile(path.unusedAssetsPath);
     if (isContent) {
-      final heard = 'The results of the unused resource check in the project are as follows:\n';
+      final heard =
+          'The results of the unused resource check in the project are as follows:\n';
       AssetsLog.out('$heard', type: OutColor.red);
       final irRegularFile = uAFile.file;
       final content = irRegularFile.readAsStringSync();
@@ -80,12 +82,14 @@ class AssetsResultCheck {
     if (bAFile.exist) {
       final isContent = AssetsTool.isContent(bAPAth);
       if (isContent) {
-        final heard = 'Filter results for files larger than the specified size:';
+        final heard =
+            'Filter results for files larger than the specified size:';
         AssetsLog.out('$heard', type: OutColor.red);
         final content = bAFile.file.readAsStringSync();
         AssetsLog.out('$content', type: OutColor.red);
         final count = AssetsTool.count(bAPAth, 'PATH:');
-        final end = 'There are a total of $count resource files that exceed the specified size.';
+        final end =
+            'There are a total of $count resource files that exceed the specified size.';
         AssetsLog.out('$end', type: OutColor.red);
       } else {
         bAFile.delete();

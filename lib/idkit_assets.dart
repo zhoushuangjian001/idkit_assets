@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:idkit_assets/src/func/assets_create.dart';
 import 'package:idkit_assets/src/func/assets_delete.dart';
 import 'package:idkit_assets/src/func/assets_filter.dart';
@@ -16,9 +18,15 @@ void run({String? name}) {
   AssetsTempFDCreate.createAssetsTempFD();
   AssetsManageCreate.createAssetsMange(clsName: name);
   AssetsPubSpecCreate.createAssetsPubspec();
-  AssetsRenamePubspec.renamePubspec();
-  AssetsResultCheck.checkRun();
-  AssetsResultCheck.runDelete();
+  try {
+    AssetsRenamePubspec.renamePubspec();
+  } catch (e) {
+    sleep(Duration(milliseconds: 500));
+    AssetsRenamePubspec.renamePubspec();
+  } finally {
+    AssetsResultCheck.checkRun();
+    AssetsResultCheck.runDelete();
+  }
 }
 
 /// Check for unused resource methods.

@@ -1,6 +1,6 @@
 name: idkit_assets
 description: Flutter project resource management command tool.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/zhoushuangjian001/idkit_assets
 
 environment:

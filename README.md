@@ -11,7 +11,7 @@ This command line tool is for the convenient use and management of the resource 
 The instructions are as follows:
 
 ```shell
-$ pub global activate idkit_assets
+$ dart pub global activate idkit_assets
 ```
 
 or
@@ -19,6 +19,10 @@ or
 ```shell
 $ flutter pub global activate idkit_assets
 ```
+
+##### Note: If the prompt [No active package idkit_assets] appears,
+
+use `$ dart pub global activate idkit_assets` to install it once.
 
 #### 2. Create a flutter project or a flutter package project
 

@@ -30,3 +30,7 @@ Flutter project resource management command tool.
 #### 3. Guide
 
 If you have any questions or difficulties in using the project resource management command tool, please read the [README](https://github.com/zhoushuangjian001/idkit_assets/blob/master/README.md) file carefully. You can also leave me a message and I will reply to you as soon as possible.
+
+## 1.0.1
+
+Fix the problem of temporary use of the process when the Windows system is processing the pubspec.yaml file

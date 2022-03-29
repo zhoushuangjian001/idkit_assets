@@ -23,33 +23,41 @@ class AssetsLog {
   }
 
   /// Start of resource management script.
-  static void start() => print(green.wrap('******************************** IDKITASSETS -- START ********************************'));
+  static void start() => print(green.wrap(
+      '******************************** IDKITASSETS -- START ********************************'));
 
   /// End of resource management script.
-  static void end() => print(green.wrap('******************************** IDKITASSETS -- >END< ********************************'));
+  static void end() => print(green.wrap(
+      '******************************** IDKITASSETS -- >END< ********************************'));
 
   /// Unknown command.
-  static void unknown() => print(lightYellow.wrap('''\n                         The input command is not recognized, 
+  static void unknown() => print(lightYellow
+      .wrap('''\n                         The input command is not recognized, 
           you can run `idkit_assets help` or `idkit_assets -h` for more help.\n'''));
 
   /// Check if execution is full project log.
-  static void unIntact() => print(lightYellow.wrap('''\n       The execution of the resource management script should be carried out in
+  static void unIntact() => print(lightYellow.wrap(
+      '''\n       The execution of the resource management script should be carried out in
                          the root directory of the project.\n'''));
 
   /// Use the script function to initialize the script first.
-  static void init() => print(lightYellow.wrap('''\n       To use the asset management script function, the initialization script 
+  static void init() => print(lightYellow.wrap(
+      '''\n       To use the asset management script function, the initialization script 
                must be initialized. You can run the `idkit_assets run` or
                `idkit_assets rename xx` command to initialize it.\n'''));
 
   /// No unused resource record prompts.
-  static void rUnusedAPreconditions() => print(lightYellow.wrap('''\n                     To use the script to remove unused assets, 
+  static void rUnusedAPreconditions() => print(lightYellow.wrap(
+      '''\n                     To use the script to remove unused assets, 
       First check the unused asset files, you can run `idkit_assets unused check`.\n'''));
 
   /// Unused resource removal result prompt.
-  static void rUnusedASuccess() => print(green.wrap('*                        Unused resource removal completed!                        *'));
+  static void rUnusedASuccess() => print(green.wrap(
+      '*                        Unused resource removal completed!                        *'));
 
   /// Incomplete run command prompt.
-  static void incomplete() => print(lightYellow.wrap('''\n                           The run command is incomplete,
+  static void incomplete() => print(lightYellow
+      .wrap('''\n                           The run command is incomplete,
                    you can run `idkit_assets help` for more help.\n'''));
 
   /// Project Resource Management Success.
@@ -94,7 +102,8 @@ class AssetsLog {
                     you can run `idkit_assets help` for more help.'''));
 
   /// Delete the file in the specified path, the file does not exist prompt.
-  static void unDeletePath() => print(red.wrap('                  The specified file path to delete does not exist.'));
+  static void unDeletePath() => print(red.wrap(
+      '                  The specified file path to delete does not exist.'));
 
   /// Delete the specified path file successfully.
   static void deleteSuccess() => print(green.wrap('''
