@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:idkit_assets/src/cls/assets_directory.dart';
 import 'package:idkit_assets/src/cls/assets_file.dart';
 import 'package:idkit_assets/src/cls/assets_path.dart';
@@ -32,7 +33,11 @@ class AssetsTool {
 
   /// Get the relative path of the resource file.
   static String getRAssetsPath(String path) {
-    final lastPath = path.split('/assets/').last;
+    final isOS = AssetsTool.getPlatform();
+    var lastPath = path.split(isOS ? '/assets/' : '\\assets\\').last;
+    if (!isOS) {
+      lastPath = lastPath.replaceAll('\\', '/');
+    }
     return 'assets/$lastPath';
   }
 
@@ -53,9 +58,11 @@ class AssetsTool {
   /// Determine if a file is a hidden file.
   static bool isHideFile(String path) {
     var res = false;
-    if (path.contains('/.')) {
-      final last = path.split('/.').last;
-      res = !last.contains('/');
+    final isOS = AssetsTool.getPlatform();
+    final Pattern pattern = isOS ? '/.' : '\\.';
+    if (path.contains(pattern)) {
+      final last = path.split(pattern).last;
+      res = !last.contains(isOS ? '/' : '\\');
     }
     return res;
   }
@@ -141,5 +148,13 @@ class AssetsTool {
       }
     }
     return result;
+  }
+
+  /// Platform distinction
+  static bool getPlatform() {
+    if (Platform.isWindows) {
+      return false;
+    }
+    return true;
   }
 }

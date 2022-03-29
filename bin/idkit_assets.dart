@@ -22,6 +22,12 @@ void main(List<String> arguments) {
     return;
   }
 
+  // Help document globalization
+  if (firstArg == 'help' || firstArg == '-h') {
+    idkit_main.help();
+    return;
+  }
+
   // Check if execution is full project.
   if (AssetsTool.isIntact) {
     // Analysis of input instructions.
@@ -80,10 +86,6 @@ void main(List<String> arguments) {
         } else {
           AssetsLog.incomplete();
         }
-        break;
-      case 'help':
-      case '-h':
-        idkit_main.help();
         break;
       default:
         AssetsLog.unknown();

@@ -30,8 +30,8 @@ class AssetsTempFDCreate {
         }
       } else if (isF) {
         // Filter hidden files.
-        final hide = fPath.split('/').last;
-        if (!hide.startsWith('.')) {
+        final isH = AssetsTool.isHideFile(fPath);
+        if (!isH) {
           assetsTempFFile.writeAsStringSync('$rFPath\n', mode: FileMode.append);
         }
       }

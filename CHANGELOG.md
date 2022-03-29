@@ -38,3 +38,9 @@ Fix the problem of temporary use of the process when the Windows system is proce
 ## 1.0.2
 
 Optimize initializing empty files
+
+## 1.0.3
+
+1. Handling window platform path backslash handling
+
+2. Adjust the help group command globalization of the command package tool

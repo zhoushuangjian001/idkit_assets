@@ -1,11 +1,9 @@
-import 'dart:io';
+import 'dart:io' show File;
 
 /// Resource management script file class.
 class AssetsFile {
   AssetsFile(this.path);
   final String path;
-
-  var a;
 
   /// Does the file exist.
   bool get exist => File(path).existsSync();
