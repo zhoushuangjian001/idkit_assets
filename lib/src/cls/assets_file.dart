@@ -2,8 +2,10 @@ import 'dart:io';
 
 /// Resource management script file class.
 class AssetsFile {
-  const AssetsFile(this.path);
+  AssetsFile(this.path);
   final String path;
+
+  var a;
 
   /// Does the file exist.
   bool get exist => File(path).existsSync();
@@ -19,7 +21,7 @@ class AssetsFile {
 
   /// Get blank content file.
   File get blank {
-    file.openWrite();
+    delete();
     return file;
   }
 

@@ -18,15 +18,9 @@ void run({String? name}) {
   AssetsTempFDCreate.createAssetsTempFD();
   AssetsManageCreate.createAssetsMange(clsName: name);
   AssetsPubSpecCreate.createAssetsPubspec();
-  try {
-    AssetsRenamePubspec.renamePubspec();
-  } catch (e) {
-    sleep(Duration(milliseconds: 500));
-    AssetsRenamePubspec.renamePubspec();
-  } finally {
-    AssetsResultCheck.checkRun();
-    AssetsResultCheck.runDelete();
-  }
+  AssetsRenamePubspec.renamePubspec();
+  AssetsResultCheck.checkRun();
+  AssetsResultCheck.runDelete();
 }
 
 /// Check for unused resource methods.

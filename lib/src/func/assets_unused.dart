@@ -81,12 +81,7 @@ class AssetsUnused {
         AssetsTempFDCreate.createAssetsTempFD();
         AssetsManageCreate.createAssetsMange();
         AssetsPubSpecCreate.createAssetsPubspec();
-        try {
-          AssetsRenamePubspec.renamePubspec();
-        } catch (e) {
-          sleep(Duration(milliseconds: 500));
-          AssetsRenamePubspec.renamePubspec();
-        }
+        AssetsRenamePubspec.renamePubspec();
       } else {
         AssetsLog.uUnusedAssets();
       }
