@@ -36,9 +36,9 @@ class AssetsTool {
     final isWin = AssetsTool.isWindows();
     var lastPath = path;
     if (isWin) {
-      lastPath = path.replaceAll('\\', '/');
+      lastPath = lastPath.replaceAll('\\', '/');
     }
-    lastPath = path.split('/assets/').last;
+    lastPath = lastPath.split('/assets/').last;
     return 'assets/$lastPath';
   }
 
@@ -62,10 +62,10 @@ class AssetsTool {
     final isWin = AssetsTool.isWindows();
     var _path = path;
     if (isWin) {
-      _path = path.replaceAll('\\', '/');
+      _path = _path.replaceAll('\\', '/');
     }
     if (_path.contains('/.')) {
-      final last = path.split('/.').last;
+      final last = _path.split('/.').last;
       res = !last.contains('/');
     }
     return res;
