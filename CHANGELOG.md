@@ -44,3 +44,7 @@ Optimize initializing empty files
 1. Handling window platform path backslash handling
 
 2. Adjust the help group command globalization of the command package tool
+
+## 1.1.0
+
+Access project resource path optimization, better access to resources
