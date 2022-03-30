@@ -18,8 +18,8 @@ void run({String? name}) {
   AssetsManageCreate.createAssetsMange(clsName: name);
   AssetsPubSpecCreate.createAssetsPubspec();
   AssetsRenamePubspec.renamePubspec();
-  // AssetsResultCheck.checkRun();
-  // AssetsResultCheck.runDelete();
+  AssetsResultCheck.checkRun();
+  AssetsResultCheck.runDelete();
 }
 
 /// Check for unused resource methods.
