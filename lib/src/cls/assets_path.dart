@@ -1,4 +1,4 @@
-import 'dart:io';
+import 'dart:io' show Directory;
 import 'package:path/path.dart';
 
 /// Path management in resource management scripts.

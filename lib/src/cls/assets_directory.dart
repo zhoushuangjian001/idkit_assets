@@ -1,4 +1,4 @@
-import 'dart:io';
+import 'dart:io' show Directory;
 
 /// Resource management script directory class.
 class AssetsDirectory {

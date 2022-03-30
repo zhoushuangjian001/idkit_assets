@@ -48,3 +48,13 @@ Optimize initializing empty files
 ## 1.1.0
 
 Access project resource path optimization, better access to resources
+
+## 1.1.1
+
+Code optimization for version **1.1.0**, no other updates
+
+## 1.1.2
+
+1. Optimized resource command internal package references
+2. Remove invalid and unused package references
+3. Supports the deletion of files in the specified path of Windows
