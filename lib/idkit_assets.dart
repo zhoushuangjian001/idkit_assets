@@ -8,6 +8,7 @@ import 'package:idkit_assets/src/func/assets_result.dart';
 import 'package:idkit_assets/src/func/assets_tfd_create.dart';
 import 'package:idkit_assets/src/func/assets_unused.dart';
 import 'package:idkit_assets/src/other/assets_log.dart';
+import 'package:idkit_assets/src/other/assets_tool.dart';
 import 'package:idkit_assets/src/other/idkit_assets_const.dart' as mconst;
 
 /// Regular execution of resource management scripts.
@@ -40,7 +41,11 @@ void filterBigAssets({String? size}) {
 
 /// Delete the file at the specified path.
 void deletePathAssets(String path) {
-  AssetsDelete.deleteAssets(path);
+  var _path = path;
+  if (AssetsTool.isWindows()) {
+    _path = path.replaceAll('/', '\\');
+  }
+  AssetsDelete.deleteAssets(_path);
 }
 
 /// Output the manual for idkit_assets.

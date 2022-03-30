@@ -33,11 +33,12 @@ class AssetsTool {
 
   /// Get the relative path of the resource file.
   static String getRAssetsPath(String path) {
-    final isOS = AssetsTool.getPlatform();
-    var lastPath = path.split(isOS ? '/assets/' : '\\assets\\').last;
-    if (!isOS) {
-      lastPath = lastPath.replaceAll('\\', '/');
+    final isWin = AssetsTool.isWindows();
+    var lastPath = path;
+    if (isWin) {
+      lastPath = path.replaceAll('\\', '/');
     }
+    lastPath = path.split('/assets/').last;
     return 'assets/$lastPath';
   }
 
@@ -58,11 +59,14 @@ class AssetsTool {
   /// Determine if a file is a hidden file.
   static bool isHideFile(String path) {
     var res = false;
-    final isOS = AssetsTool.getPlatform();
-    final Pattern pattern = isOS ? '/.' : '\\.';
-    if (path.contains(pattern)) {
-      final last = path.split(pattern).last;
-      res = !last.contains(isOS ? '/' : '\\');
+    final isWin = AssetsTool.isWindows();
+    var _path = path;
+    if (isWin) {
+      _path = path.replaceAll('\\', '/');
+    }
+    if (_path.contains('/.')) {
+      final last = path.split('/.').last;
+      res = !last.contains('/');
     }
     return res;
   }
@@ -151,10 +155,10 @@ class AssetsTool {
   }
 
   /// Platform distinction
-  static bool getPlatform() {
+  static bool isWindows() {
     if (Platform.isWindows) {
-      return false;
+      return true;
     }
-    return true;
+    return false;
   }
 }
