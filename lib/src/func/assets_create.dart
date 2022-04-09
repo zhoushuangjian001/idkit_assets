@@ -11,6 +11,8 @@ class AssetsCreate {
     final readmeFile = AssetsFile(path.readmePath);
     if (!readmeFile.exist) {
       readmeFile.blank.writeAsStringSync(readme);
+    } else {
+      readmeFile.delete();
     }
   }
 }

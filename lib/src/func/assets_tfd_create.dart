@@ -22,16 +22,18 @@ class AssetsTempFDCreate {
       final rFPath = AssetsTool.getRAssetsPath(fPath);
       if (isD) {
         final isExist = AssetsTool.isDContent(fPath);
-        if (isExist) {
-          assetsTempDFile.writeAsStringSync('$rFPath/\n',
-              mode: FileMode.append);
+        final isFont = fPath.endsWith('fonts') || fPath.endsWith('font');
+        if (isExist && !isFont) {
+          assetsTempDFile.writeAsStringSync('$rFPath/\n', mode: FileMode.append);
         } else {
           AssetsDirectory(fPath).delete();
         }
       } else if (isF) {
         // Filter hidden files.
         final isH = AssetsTool.isHideFile(fPath);
-        if (!isH) {
+        // Filtter font
+        late final isFont = fPath.endsWith('.ttf');
+        if (!isH && !isFont) {
           assetsTempFFile.writeAsStringSync('$rFPath\n', mode: FileMode.append);
         }
       }
