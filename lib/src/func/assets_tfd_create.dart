@@ -24,7 +24,8 @@ class AssetsTempFDCreate {
         final isExist = AssetsTool.isDContent(fPath);
         final isFont = fPath.endsWith('fonts') || fPath.endsWith('font');
         if (isExist && !isFont) {
-          assetsTempDFile.writeAsStringSync('$rFPath/\n', mode: FileMode.append);
+          assetsTempDFile.writeAsStringSync('$rFPath/\n',
+              mode: FileMode.append);
         } else {
           AssetsDirectory(fPath).delete();
         }
