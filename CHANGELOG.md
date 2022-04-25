@@ -66,3 +66,6 @@ Code optimization for version **1.1.0**, no other updates
 3. Added filtering for font type resource files and folders of fonts and fonts.
 
 ## 1.1.4
+
+1. Remove filtering of font resources.
+2. Optimize the existence logic of readme files.
