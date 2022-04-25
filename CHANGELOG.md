@@ -64,3 +64,5 @@ Code optimization for version **1.1.0**, no other updates
 1. Remove the readme file under Assets if there are resources.
 2. Added script type detection to resource files.
 3. Added filtering for font type resource files and folders of fonts and fonts.
+
+## 1.1.4

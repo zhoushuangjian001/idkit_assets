@@ -29,8 +29,8 @@ final assetsNameRegExp = RegExp(r'^[a-z](\w)*$');
 final pubspecAssetsRegExp = RegExp(r'^(# )?assets:$');
 
 /// Citation rules for pre-project resources.
-final assetsORegExp = RegExp(
-    r'^(#   )?- [(\w)./]+.(png|jpeg|webp|gif|bmp|svga|mp3|wav|mp4|avi|mkv|flv|mov|wmv|json|txt|pdf|mdb|bak|db|sh|bat)$');
+final assetsORegExp =
+    RegExp(r'^(#   )?- [(\w)./]+.(png|jpeg|webp|gif|bmp|svga|mp3|wav|mp4|avi|mkv|flv|mov|wmv|json|txt|pdf|mdb|bak|db|sh|bat|ttf|otf)$');
 
 /// New citation rules for project resources.
 final assetsRegExp = RegExp(r'^- [(\w)./]+/$');

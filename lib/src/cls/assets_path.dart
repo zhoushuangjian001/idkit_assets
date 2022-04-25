@@ -47,4 +47,7 @@ class AssetsPath {
 
   /// Project resource large file record file path.
   String get bigAssetsPath => join(_rootPath, 'temp_big_assets.txt');
+
+  /// Project font resource temporary record file.
+  String get fontsAssetsPath => join(_rootPath, 'temp_font_assets.txt');
 }

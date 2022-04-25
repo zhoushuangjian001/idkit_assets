@@ -13,7 +13,6 @@ import 'package:idkit_assets/src/other/idkit_assets_const.dart' as mconst;
 
 /// Regular execution of resource management scripts.
 void run({String? name}) {
-  AssetsCreate.createAssetsDirectory();
   AssetsTempFDCreate.createAssetsTempFD();
   AssetsManageCreate.createAssetsMange(clsName: name);
   AssetsPubSpecCreate.createAssetsPubspec();

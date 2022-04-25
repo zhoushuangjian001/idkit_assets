@@ -5,14 +5,17 @@ import 'package:idkit_assets/src/other/idkit_assets_const.dart';
 
 /// Create a resource directory for the project.
 class AssetsCreate {
-  static void createAssetsDirectory() {
+  static void createAssetsDirectory({
+    bool content = false,
+  }) {
     final path = AssetsPath();
     AssetsDirectory(path.assetsPath).directory;
     final readmeFile = AssetsFile(path.readmePath);
-    if (!readmeFile.exist) {
-      readmeFile.blank.writeAsStringSync(readme);
-    } else {
+    final isExist = readmeFile.exist;
+    if (content && isExist) {
       readmeFile.delete();
+    } else {
+      readmeFile.blank.writeAsStringSync(readme);
     }
   }
 }
